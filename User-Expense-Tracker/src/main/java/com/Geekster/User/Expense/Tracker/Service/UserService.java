@@ -106,7 +106,7 @@ private ExpenseService expenseService;
                 authenticationService.saveAuthToken(authToken);
 
                 // EmailHandler.sendEmail("mainakgh1@gmail.com","email testing",authToken.getTokenValue());
-                return "Session Created";
+                return "Session Created with the Token "+authToken.getTokenValue();
             }
             else {
                 signInStatusMessage = "Invalid credentials!!!";
