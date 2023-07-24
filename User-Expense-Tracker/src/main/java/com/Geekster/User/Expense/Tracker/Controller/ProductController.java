@@ -1,5 +1,5 @@
 package com.Geekster.User.Expense.Tracker.Controller;
-
+import org.springframework.web.bind.annotation.GetMapping;
 import com.Geekster.User.Expense.Tracker.Entity.Product;
 import com.Geekster.User.Expense.Tracker.Service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
