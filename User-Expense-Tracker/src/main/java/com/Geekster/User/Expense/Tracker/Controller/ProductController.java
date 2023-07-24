@@ -23,4 +23,9 @@ public class ProductController {
     @PostMapping("products")
     public String addListOfProducts(@RequestBody List<Product> products) {return productService.addListOfProducts(products);}
 
+    @GetMapping("products")
+    public List<Product> getAllProducts()
+    {
+        return productService.getAllProducts();
+    }
 }

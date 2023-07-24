@@ -28,4 +28,8 @@ public class ProductService {
     public Product getProductById(Integer productId) {
         return iProductRepo.findById(productId).orElse(null);
     }
+
+    public List<Product> getAllProducts() {
+        return iProductRepo.findAll();
+    }
 }
