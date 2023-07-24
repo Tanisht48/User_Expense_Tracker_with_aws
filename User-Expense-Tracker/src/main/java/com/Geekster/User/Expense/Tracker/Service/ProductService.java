@@ -32,4 +32,14 @@ public class ProductService {
     public List<Product> getAllProducts() {
         return iProductRepo.findAll();
     }
+
+    public Product getproduct(Integer productId) {
+
+        Product product = iProductRepo.findById(productId).orElse(null);
+        if(product!=null)
+        {
+            return product;
+        }
+        throw new IllegalStateException("Not a Valid Product");
+    }
 }

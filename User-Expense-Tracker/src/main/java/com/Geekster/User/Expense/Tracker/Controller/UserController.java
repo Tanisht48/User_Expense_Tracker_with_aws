@@ -53,7 +53,14 @@ public class UserController {
         return "SignIn to Order";
     }
     }
-
+    @GetMapping("product/id")
+    public Product getProduct(@RequestParam String userEmail, @RequestParam String userToken,@RequestParam Integer productId)
+    {
+        if(authenticationService.authenticate(userEmail,userToken)) {
+            return userService.getProduct(productId);
+        }
+        throw new IllegalStateException("Not a Valid User");
+    }
 
     @GetMapping("Monthly/Expense")
     public String getMonthlyExpense(@RequestParam String userEmail, @RequestParam String userToken, @RequestParam  Month month ,

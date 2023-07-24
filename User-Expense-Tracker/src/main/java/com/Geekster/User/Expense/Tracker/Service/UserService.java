@@ -28,6 +28,9 @@ private OrderService orderService;
 @Autowired
 private ExpenseService expenseService;
 
+@Autowired
+private ProductService productService;
+
     public SignUpOutput userSignUp(User user) {
         boolean signUpStatus = true;
         String signUpStatusMessage = null;
@@ -149,5 +152,9 @@ private ExpenseService expenseService;
         User user = userRepo.findFirstByUserEmail(userEmail);
 
          return orderService.getOrderedProductsWithDate(date,user);
+    }
+
+    public Product getProduct(Integer productId) {
+        return productService.getproduct(productId);
     }
 }
